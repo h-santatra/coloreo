@@ -1,9 +1,9 @@
-import { Link, useLocation, useParams } from 'react-router-dom';
-import { X } from 'lucide-react';
-import tinycolor from 'tinycolor2';
-import CopyToClipboard from '../Components/CopyToClipboard';
-import { Share } from 'lucide-react';
-import ShareModal from '../Components/Modal/ShareModal';
+import { Link, useLocation, useParams } from "react-router-dom";
+import { X } from "lucide-react";
+import tinycolor from "tinycolor2";
+import CopyToClipboard from "../Components/CopyToClipboard";
+import { Share } from "lucide-react";
+import ShareModal from "../Components/Modal/ShareModal";
 
 export default function ViewColor() {
   const location = useLocation();
@@ -14,7 +14,7 @@ export default function ViewColor() {
 
   // If no state passed, decode URL param
   if (!selectedColor && encodedColors) {
-    selectedColor = encodedColors.split('-').map((hex) => `#${hex}`);
+    selectedColor = encodedColors.split("-").map((hex) => `#${hex}`);
   }
 
   // If no colors available, show fallback
@@ -37,28 +37,28 @@ export default function ViewColor() {
     Math.round(tinycolor.readability(bgColor, textColor) * 100) / 100;
 
   const normalAA = tinycolor.isReadable(bgColor, textColor, {
-    level: 'AA',
-    size: 'small',
+    level: "AA",
+    size: "small",
   });
   const largeAA = tinycolor.isReadable(bgColor, textColor, {
-    level: 'AA',
-    size: 'large',
+    level: "AA",
+    size: "large",
   });
   const normalAAA = tinycolor.isReadable(bgColor, textColor, {
-    level: 'AAA',
-    size: 'small',
+    level: "AAA",
+    size: "small",
   });
   const largeAAA = tinycolor.isReadable(bgColor, textColor, {
-    level: 'AAA',
-    size: 'large',
+    level: "AAA",
+    size: "large",
   });
 
   // Color sections
   const colorDetails = [
-    { title: 'Background Color', color: selectedColor[0] },
-    { title: 'Primary Color', color: selectedColor[2] },
-    { title: 'Secondary Color', color: selectedColor[1] },
-    { title: 'Text Color', color: selectedColor[3] },
+    { title: "Background Color", color: selectedColor[0] },
+    { title: "Primary Color", color: selectedColor[2] },
+    { title: "Secondary Color", color: selectedColor[1] },
+    { title: "Text Color", color: selectedColor[3] },
   ];
 
   return (
@@ -79,7 +79,7 @@ export default function ViewColor() {
                 key={color.title}
                 style={{ backgroundColor: color.color }}
                 className={`flex flex-col text-center font-semibold uppercase w-full items-center justify-center space-y-4 py-4 ${
-                  isLight ? 'text-black' : 'text-white'
+                  isLight ? "text-black" : "text-white"
                 }`}
               >
                 <div>{color.title}</div>
@@ -96,7 +96,7 @@ export default function ViewColor() {
           <div className="flex justify-center pt-4 pb-8 ">
             <button
               className="btn btn-info btn-outline uppercase"
-              onClick={() => document.getElementById('my_modal_4').showModal()}
+              onClick={() => document.getElementById("my_modal_4").showModal()}
             >
               Share this Color Palette <Share size={20} />
             </button>
@@ -109,7 +109,7 @@ export default function ViewColor() {
             <h2 className="text-xl w-fit uppercase ">Contrast Ratio :</h2>
             <span
               className={`text-xl w-fit py-1 px-2 border  border-2 rounded-md font-semibold ${
-                colorRatio > 7.1 ? 'border-green-600' : 'border-red-600'
+                colorRatio > 7.1 ? "border-green-600" : "border-red-600"
               }`}
             >
               {colorRatio} : 1
@@ -118,8 +118,8 @@ export default function ViewColor() {
 
           <div className="space-y-10">
             <div className="">
-              <h3 className="text-xl font-semibold pb-4">Level AA </h3>
-              <div className="flex flex-col space-y-4">
+              <h3 className="text-xl font-semibold pb-2">Level AA </h3>
+              <div className="flex flex-col space-y-1">
                 <div className="flex items-center space-x-4 overflow-hidden text-nowrap">
                   <h5 className="flex items-center text-nowrap">
                     <span>Normal text :</span>
@@ -168,7 +168,7 @@ export default function ViewColor() {
                     >
                       Lorem ipsum dolor sit
                       <span className="text-[24px] font-normal">
-                        {' '}
+                        {" "}
                         amet consectetur adipiscing elit
                       </span>
                     </p>
@@ -178,8 +178,8 @@ export default function ViewColor() {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold pb-4"> Level AAA </h3>
-              <div className="flex flex-col space-y-4">
+              <h3 className="text-xl font-semibold pb-2"> Level AAA </h3>
+              <div className="flex flex-col space-y-1">
                 <div className="flex items-center space-x-4 overflow-hidden text-nowrap">
                   <h5 className="flex items-center text-nowrap">
                     <span>Normal text :</span>
@@ -228,7 +228,7 @@ export default function ViewColor() {
                     >
                       Lorem ipsum dolor sit
                       <span className="text-[24px] font-normal">
-                        {' '}
+                        {" "}
                         amet consectetur adipiscing elit
                       </span>
                     </p>
