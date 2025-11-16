@@ -105,7 +105,7 @@ export default function ViewColor() {
           <h1 className="divider text-2xl uppercase font-semibold text-center">
             <span className="px-8">Accessibility</span>
           </h1>
-          <div className="flex items-center justify-center space-x-2 mt-8">
+          <div className="flex items-center justify-center space-x-2 mt-8 mb-6">
             <h2 className="text-xl w-fit uppercase ">Contrast Ratio :</h2>
             <span
               className={`text-xl w-fit py-1 px-2 border  border-2 rounded-md font-semibold ${
